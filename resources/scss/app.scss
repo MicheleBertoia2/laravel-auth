@@ -6,6 +6,12 @@ header{
 aside{
     width: 230px;
     height: 100%;
+    li{
+        list-style: none;
+        a{
+            text-decoration: none;
+        }
+    }
 }
 
 .mb-main-wrapper{
