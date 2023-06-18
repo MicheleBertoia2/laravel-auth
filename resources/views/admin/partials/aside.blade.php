@@ -2,6 +2,6 @@
     <ul>
         <li><a href="{{ route('admin.home') }}">Home</a></li>
         <li><a href="{{ route('admin.projects.index') }}">Elenco Progetti</a></li>
-        <li><a href="#">Aggiungi un nuovo progetto</a></li>
+        <li><a href="{{ route('admin.projects.create') }}">Aggiungi un nuovo progetto</a></li>
     </ul>
 </aside>
