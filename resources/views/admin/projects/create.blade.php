@@ -39,7 +39,7 @@
                   id="description"
                   name="description"
                 >
-                    {{ old('description') }}
+                    {!! old('description') !!}
                 </textarea>
                   @error('description')
                       <p class="text-danger">{{ $message }}</p>
