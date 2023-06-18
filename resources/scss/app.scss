@@ -17,3 +17,7 @@ aside{
 .mb-main-wrapper{
     height: calc(100vh - 60px);
 }
+
+.ck-editor__editable {
+    min-height: 300px;
+}
