@@ -11,6 +11,7 @@
                 <th scope="col">Titolo</th>
                 <th scope="col">Repo Link</th>
                 <th scope="col">Collaboratori</th>
+                <th scope="col">Azioni</th>
               </tr>
             </thead>
             <tbody>
@@ -18,9 +19,14 @@
 
                 <tr>
                   <td>{{$project->id}}</td>
-                  <td>{{$project->title}}</td>
-                  <td>{{$project->project_link}}</td>
-                  <td>{{$project->collaborators}}</td>
+                  <td class="table-success">{{$project->title}}</td>
+                  <td class="table-warning">{{$project->project_link}}</td>
+                  <td class="table-danger">{{$project->collaborators}}</td>
+                  <td>
+                      <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-success">DETTAGLIO</a>
+                      <a href="#" class="btn btn-warning">MODIFICA</a>
+                      <a href="#" class="btn btn-danger">ELIMINA</a>
+                  </td>
                 </tr>
 
                 @endforeach
