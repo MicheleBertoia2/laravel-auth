@@ -24,7 +24,7 @@
                   <td class="table-danger">{{$project->collaborators}}</td>
                   <td>
                       <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-success">DETTAGLIO</a>
-                      <a href="#" class="btn btn-warning">MODIFICA</a>
+                      <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">MODIFICA</a>
                       <a href="#" class="btn btn-danger">ELIMINA</a>
                   </td>
                 </tr>
