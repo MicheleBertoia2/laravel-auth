@@ -4,6 +4,14 @@
     <div class="container">
         <h1 class="my-5">Elenco progetti</h1>
 
+        @if (session('deleted'))
+
+            <div class="alert alert-success" id="delMsg">
+                {{ session('deleted') }}
+            </div>
+
+        @endif
+
         <table class="table">
             <thead>
               <tr>
@@ -25,7 +33,15 @@
                   <td>
                       <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-success">DETTAGLIO</a>
                       <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">MODIFICA</a>
-                      <a href="#" class="btn btn-danger">ELIMINA</a>
+                      <form
+                        action="{{ route('admin.projects.destroy', $project) }}"
+                        method="POST"
+                        onsubmit="return confirm('sei sicuro di voler eliminare questo elemento?')"
+                        class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">ELIMINA</button>
+                      </form>
                   </td>
                 </tr>
 
@@ -35,4 +51,16 @@
           </table>
 
     </div>
+
+    <script>
+        const delMsg = document.querySelector('#delMsg');
+        if (typeof(delMsg) != 'undefined' && delMsg != null){
+            setInterval(() => {
+                delMsg.classList.add('d-none')
+
+            }, 5000);
+        }
+
+    </script>
+
 @endsection

@@ -97,6 +97,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index')->with('deleted', 'deleted');
+        return redirect()->route('admin.projects.index')->with('deleted', "Il Progetto $project->title è stato eliminato correttamente");
     }
 }
