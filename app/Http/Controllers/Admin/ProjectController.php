@@ -89,6 +89,12 @@ class ProjectController extends Controller
         if($form_data['title'] !== $project->title){
             $form_data['slug'] = Project::generateSlug($form_data['title']);
         }
+        if(array_key_exists('image_path', $form_data)){
+            if($project->image_path){
+                Storage::disk('public')->delete($project->image_path);
+            }
+            $form_data['image_path'] = Storage::put('uploads/', $form_data['image_path']);
+        }
         $project->update($form_data);
 
         return redirect()->route('admin.projects.show', $project);

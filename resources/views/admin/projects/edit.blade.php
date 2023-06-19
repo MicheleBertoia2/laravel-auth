@@ -51,10 +51,12 @@
                 <label for="image_path" class="form-label">Path immagini</label>
                 <input
                   type="file"
-                  class="form-control"
+                  onchange="showImage(event)"
+                  class="form-control mb-3"
                   id="image_path"
                   name="image_path"
                   >
+                  <img src="{{ asset('storage/' .  $project?->image_path ) }}" alt="" width="150" id="imgPrev" onerror="this.src= '/noimage.jpg'" >
 
             </div>
 
@@ -151,6 +153,13 @@
             .catch( error => {
                 console.error( error );
             } );
+
+            function  showImage(event){
+            const  tagImage = document.getElementById('imgPrev');
+            tagImage.src = URL.createObjectURL(event.target.files[0])
+
+        }
+
     </script>
 
 @endsection
