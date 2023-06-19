@@ -15,7 +15,7 @@
         }
         @endif
 
-        <form action="{{ route('admin.projects.update', $project) }}" method="POST">
+        <form action="{{ route('admin.projects.update', $project) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -50,14 +50,12 @@
             <div class="mb-3">
                 <label for="image_path" class="form-label">Path immagini</label>
                 <input
-                  type="text"
-                  class="form-control @error('image_path') is-invalid @enderror"
+                  type="file"
+                  class="form-control"
                   id="image_path"
                   name="image_path"
-                  value="{{ old('image_path', $project->image_path) }}">
-                  @error('image_path')
-                      <p class="text-danger">{{ $message }}</p>
-                  @enderror
+                  >
+
             </div>
 
             <div class="mb-3">

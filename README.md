@@ -15,3 +15,8 @@ Oggi continuate sulla stessa repo di ieri (laravel-auth) creando  la CRUD del vo
 Ognuno di voi immagini quali dati servono per un portfolio e quindi generate la migration.
 Il seeder è opzionale, l’importante che tutta la CRUD funzioni correttamente con tutte le funzionalità viste
 BONUS: in edit e create sostituire la textarea con un CK Editor come visto in classe
+
+
+### Day 3
+
+oggi completate la CRUD del portfolio, sempre sulla stessa repo,  con l’aggiunta dell’immagine e la sua relativa eliminazione.

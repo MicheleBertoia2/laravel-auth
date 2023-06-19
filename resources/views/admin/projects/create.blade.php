@@ -15,7 +15,7 @@
         }
         @endif
 
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -47,16 +47,16 @@
             </div>
 
             <div class="mb-3">
-                <label for="image_path" class="form-label">immagine</label>
+                <label for="image_path" class="form-label">Aggiungi un immagine</label>
                 <input
-                  type="text"
-                  class="form-control @error('image_path') is-invalid @enderror"
+                  type="file"
+                  onchange="showImage(event)"
+                  class="form-control mb-3"
                   id="image_path"
                   name="image_path"
-                  value="{{ old('image_path') }}">
-                  @error('image_path')
-                      <p class="text-danger">{{ $message }}</p>
-                  @enderror
+                  >
+                  <img src="" alt="" width="150" id="imgPrev" onerror="this.src= '/noimage.jpg'" >
+
             </div>
 
             <div class="mb-3">
@@ -152,6 +152,13 @@
             .catch( error => {
                 console.error( error );
             } );
+
+        function  showImage(event){
+            const  tagImage = document.getElementById('imgPrev');
+            tagImage.src = URL.createObjectURL(event.target.files[0])
+
+        }
+
     </script>
 
 @endsection
