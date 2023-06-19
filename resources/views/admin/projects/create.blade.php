@@ -47,14 +47,14 @@
             </div>
 
             <div class="mb-3">
-                <label for="image_paths" class="form-label">Path immagini (separati da |)</label>
+                <label for="image_path" class="form-label">immagine</label>
                 <input
                   type="text"
-                  class="form-control @error('image_paths') is-invalid @enderror"
-                  id="image_paths"
-                  name="image_paths"
-                  value="{{ old('image_paths') }}">
-                  @error('image_paths')
+                  class="form-control @error('image_path') is-invalid @enderror"
+                  id="image_path"
+                  name="image_path"
+                  value="{{ old('image_path') }}">
+                  @error('image_path')
                       <p class="text-danger">{{ $message }}</p>
                   @enderror
             </div>

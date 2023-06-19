@@ -14,7 +14,7 @@ class Project extends Model
         'title',
         'slug',
         'description',
-        'image_paths',
+        'image_path',
         'project_link',
         'collaborators',
         'frameworks',

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description');
-            $table->text('image_paths')->nullable();
+            $table->string('image_path')->nullable();
             $table->string('project_link')->nullable();
             $table->string('collaborators')->nullable();
             $table->string('frameworks')->nullable();

@@ -21,7 +21,7 @@ class ProjectsTableSeeder extends Seeder
             $new_project->title = $faker->word(3);
             $new_project->slug = Project::generateSlug($new_project->title);
             $new_project->description = $faker->paragraph();
-            $new_project->image_paths = 'https://d3kjluh73b9h9o.cloudfront.net/original/3X/f/4/f4343b1a17c43af437f2dc8984cb5e07e3525998.png|https://i.pinimg.com/736x/2a/7a/22/2a7a22fc5cb98c6a81fd2dd268da8a3d.jpg';
+            $new_project->image_path = 'https://d3kjluh73b9h9o.cloudfront.net/original/3X/f/4/f4343b1a17c43af437f2dc8984cb5e07e3525998.png';
             $new_project->project_link = $faker->word();
             $new_project->collaborators = $faker->word();
             $new_project->frameworks = $faker->word(2);

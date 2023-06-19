@@ -28,6 +28,7 @@ class ProjectRequest extends FormRequest
             'description' => 'required|min:3',
             'project_link' => 'max:255',
             'collaborators' => 'max:255',
+            'image_path' => 'max:255',
             'frameworks' => 'max:255',
             'prog_languages' => 'max:255',
             'date_started' => 'date',
@@ -45,6 +46,7 @@ class ProjectRequest extends FormRequest
             'collaborators.max' => 'Il campo può contenere al massimo :max caratteri',
             'frameworks.max' => 'Il campo può contenere al massimo :max caratteri',
             'prog_languages.max' => 'Il campo può contenere al massimo :max caratteri',
+            'image_path.max' => 'Il campo può contenere al massimo :max caratteri',
             'date_started.date' => 'La data di inizio deve essere in un formato corretto',
             'date_ended.date' => 'La data di fine deve essere in un formato corretto'
 
